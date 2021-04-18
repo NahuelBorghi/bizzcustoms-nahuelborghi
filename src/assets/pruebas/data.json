@@ -1,0 +1,14 @@
+{
+   "compatibilidad":{
+      "fabricante-cpu":["amd","intel"],
+      "socket":[], 
+      "chipset":["mostrar chipsets para el socket y preguntar salidas de video. tambien saber si tiene luces"], 
+      "cpu":["preguntar generacion y si es apu para ver si necesita si o si gpu"],
+      "tipo-ram":["preguntar tipo de ram para comprarar con chipset y si tiene luces"],
+      "GPU":["preguntar cantidad de ventiladores por el largo aprox de gpu"],
+      "almacenamiento":["preguntar cantidad de sata en mother para contar dispositivos sata"],
+      "gabinete":["preguntar largo maximo de gpu y tamaño maximo de mother para comparar con datos recopilados y si tiene luces por watts"],
+      "fuente":["ver como calcular consumo", "sumar aprox segun gama de mother, cpu y gpu"],
+      "conclusion":"mostrar errores y posibilidades de expansion simples"
+   }
+}

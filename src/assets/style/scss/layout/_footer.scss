@@ -1,0 +1,14 @@
+footer{
+    position: fixed ;
+    bottom: 0px;
+    max-height: 100px;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    background-color: $primario;
+    color: white;
+    padding: 5px;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    z-index: 4;
+}

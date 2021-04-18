@@ -1,0 +1,22 @@
+body{
+    display: grid;
+    grid-template-areas:"logo header header header" "nav nav nav nav" "section section section section";
+    grid-gap: 5px;
+    grid-template-rows: 0.5fr 1fr 100%;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr;
+    @media screen and (min-width: 480px){grid-template-areas:"header header header header" "logo nav nav nav" "section section section section";}
+    header{
+        grid-area: header;
+    }
+    .logo{
+        grid-area: logo;
+        justify-items: center;
+    }
+    nav{
+        grid-area: nav;
+        align-self: center;
+    }
+    section{
+        grid-area: section;
+    }
+}

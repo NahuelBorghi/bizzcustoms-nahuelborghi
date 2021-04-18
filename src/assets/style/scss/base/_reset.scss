@@ -1,0 +1,14 @@
+body{width: 100%;height: 100%;margin: 0px;
+    ul{margin-block: 0px;padding-inline-start: 0px;
+        li{list-style: none;}
+        a:hover{color: $secundario;}}
+    a:link{text-decoration: none;color: unset;}
+    a:visited{text-decoration: none;color: unset;}
+    section{height: 100%;}
+    nav{
+        ul{display: inline;
+            li{display: inline;}}
+        form{display: inline;}
+    }
+    footer{width: 100%;margin-block: 0px;padding-inline-start: 0px;padding-inline-end: 0px;}
+}

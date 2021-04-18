@@ -1,0 +1,212 @@
+[
+   {
+      "id":"001",
+      "nombre":"Elevador de monitor (aluminio)",
+      "marca":"BIZZ",
+      "altura":"10cm",
+      "largo":"42cm",
+      "ancho":"24cm",
+      "peso":"-kg",
+      "materiales":[
+         "aluminio",
+         ""
+      ],
+      "conexiones":"0",
+      "consumo":"",
+      "otros":"soporta hasta 34kg"
+   },
+   {
+      "id":"002",
+      "nombre":"Elevador de monitor (madera)",
+      "marca":"BIZZ",
+      "altura":"9.5cm",
+      "largo":"48.5cm",
+      "ancho":"24cm",
+      "peso":"-kg",
+      "materiales":[
+         "madera",
+         ""
+      ],
+      "conexiones":"0",
+      "consumo":"",
+      "otros":"area de apoyo 41x24cm. soporta hasta 24kg"
+   },
+   {
+      "id":"003",
+      "nombre":"Reposa muñecas (madera)",
+      "marca":"BIZZ",
+      "altura":"maximo 1.8cm",
+      "largo":"maximo 10cm",
+      "ancho":"minimo 29cm",
+      "peso":"variable",
+      "materiales":[
+         "madera",
+         ""
+      ],
+      "conexiones":"0",
+      "consumo":"",
+      "otros":"indicar dimensiones teclado en los detalles del pedido"
+   },
+   {
+      "id":"004",
+      "nombre":"Barra espaciadora (madera)",
+      "marca":"BIZZ",
+      "altura":"1.1cm",
+      "largo":"11.2cm",
+      "ancho":"1.8cm",
+      "peso":"variable",
+      "materiales":[
+         "madera",
+         ""
+      ],
+      "conexiones":"0",
+      "consumo":"",
+      "otros":""
+   },
+   {
+      "id":"005",
+      "nombre":"Kit teclas de madera",
+      "marca":"BIZZ",
+      "altura":"0",
+      "largo":"0",
+      "ancho":"0",
+      "peso":"-",
+      "materiales":[
+         "madera",
+         ""
+      ],
+      "conexiones":"0",
+      "consumo":"",
+      "otros":"solo teclados en español, latinoamericano o ingles"
+   },
+   {
+      "id":"006",
+      "nombre":"Kit extensiones",
+      "marca":"BIZZ",
+      "altura":"0",
+      "largo":"18cm",
+      "ancho":"variable",
+      "peso":"variable",
+      "materiales":[
+         "plastico",
+         ""
+      ],
+      "conexiones":"2",
+      "consumo":"",
+      "otros":"consultar disponibilidad de color antes de abonar"
+   },
+   {
+      "id":"007",
+      "nombre":"Soporte vertical de GPU",
+      "marca":"DEEP COOL",
+      "altura":"16 o 26cm",
+      "largo":"5cm",
+      "ancho":"6cm",
+      "peso":"",
+      "materiales":[
+         "aluminio",
+         "plastico",
+         ""
+      ],
+      "conexiones":"0",
+      "consumo":"2.5w",
+      "otros":""
+   },
+   {
+      "id":"008",
+      "nombre":"Soporte horizontal de GPU",
+      "marca":"BIZZ",
+      "altura":"8cm",
+      "largo":"18cm",
+      "ancho":"2cm",
+      "peso":"",
+      "materiales":[
+         "aluminio",
+         ""
+      ],
+      "conexiones":"0",
+      "consumo":"",
+      "otros":"consultar disponibilidad de color antes de abonar y especificar dibujo a grabar"
+   },
+   {
+      "id":"009",
+      "nombre":" Kit cable usb",
+      "marca":"BIZZ",
+      "altura":"0",
+      "largo":"1.2m",
+      "ancho":"0",
+      "peso":"",
+      "materiales":[
+         "cable mallado",
+         ""
+      ],
+      "conexiones":"3",
+      "consumo":"",
+      "otros":"consultar disponibilidad de color antes de abonar"
+   },
+   {
+      "id":"010",
+      "nombre":"Cable forrado 3.5 estereo",
+      "marca":"BIZZ",
+      "altura":"0",
+      "largo":"1.5m",
+      "ancho":"0",
+      "peso":"",
+      "materiales":[
+         "cable mallado",
+         ""
+      ],
+      "conexiones":"2",
+      "consumo":"",
+      "otros":"consultar disponibilidad de color antes de abonar"
+   },
+   {
+      "id":"011",
+      "nombre":"Cable trenzado forrado 3.5 estereo",
+      "marca":"BIZZ",
+      "altura":"0",
+      "largo":"1.5m",
+      "ancho":"0",
+      "peso":"",
+      "materiales":[
+         "cable mallado",
+         ""
+      ],
+      "conexiones":"2",
+      "consumo":"",
+      "otros":"consultar disponibilidad de color antes de abonar"
+   },
+   {
+      "id":"012",
+      "nombre":"kit extensiones en L",
+      "marca":"BIZZ",
+      "altura":"0",
+      "largo":"18cm",
+      "ancho":"variable",
+      "peso":"variable",
+      "materiales":[
+         "plastico",
+         "cable mallado",
+         ""
+      ],
+      "conexiones":"2",
+      "consumo":"",
+      "otros":"consultar disponibilidad de color antes de abonar"
+   },
+   {
+      "id":"000",
+      "nombre":"Error",
+      "precio":"-",
+      "marca":"-",
+      "altura":"-",
+      "largo":"-",
+      "ancho":"-",
+      "peso":"-",
+      "materiales":[
+         ""
+      ],
+      "conexiones":"-",
+      "consumo":"-",
+      "otros":"-"
+   }
+]
