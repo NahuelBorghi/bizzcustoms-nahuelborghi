@@ -1,13 +1,15 @@
 import logo from './assets/img-pagina/logo.png';
 import './App.css';
 import React from "react"
-import Navbar from "./components/navbar"
-import Header from "./components/header"
+import Navbar from "./components/Navbar/navbar"
+import Header from "./components/Header/header"
+import {ItemListContainer} from './components/ItemListContainer/ItemListContainer'
 function App() {
   return (
         <div id="body">
         <Header/>
         <Navbar/>
+        <ItemListContainer greeting="casa"/>
         {bizzLogo()}
         {footer()}
         </div>
