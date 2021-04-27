@@ -4,7 +4,7 @@ function Header(){
     return(
         <div id="header">
             <div><button id="tema" type="button">Tema Oscuro</button></div>
-            <div class="carrito"><CartWidget/></div>
+            <div className="carrito"><CartWidget/></div>
         </div>
     );
 }

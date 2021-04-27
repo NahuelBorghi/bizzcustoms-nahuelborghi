@@ -1,0 +1,33 @@
+#agregarCarrito{
+    border: 2px solid #4faee1;
+    border-radius: 10px;
+    height: fit-content;
+    width: fit-content;
+    padding: 5px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p{
+        font-size: 1.6rem;
+        margin: 0px;
+        text-align: center;
+        display: block;
+    }
+    input[type="number"]{
+        border-radius: 5px;
+        border: 2px solid grey;
+        text-align: center;
+        width: 100%;
+        margin: 10px 0 10px 0;
+    }
+    input[type="button"]{
+        display: block;
+        border-radius: 5px;
+        border: 2px solid #4faee1;
+        background-color: inherit;
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+    
+}

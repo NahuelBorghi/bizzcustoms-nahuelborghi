@@ -4,12 +4,15 @@ import React from "react"
 import Navbar from "./components/Navbar/navbar"
 import Header from "./components/Header/header"
 import {ItemListContainer} from './components/ItemListContainer/ItemListContainer'
+import {CartItemCount} from "./components/Items/CartItemCount/CartItemCount"
+
 function App() {
   return (
         <div id="body">
         <Header/>
         <Navbar/>
         <ItemListContainer greeting="casa"/>
+        <CartItemCount/>
         {bizzLogo()}
         {footer()}
         </div>
@@ -26,7 +29,7 @@ function footer(){
 }
 function bizzLogo(){
     return(
-        <div class="logo"><a href="./"><img src={logo} alt="logo"/></a></div>
+        <div className="logo"><a href="./"><img src={logo} alt="logo"/></a></div>
     );
 }
 
