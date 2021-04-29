@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/navbar"
 import Header from "./components/Header/header"
 import {ItemListContainer} from './components/ItemListContainer/ItemListContainer'
 import {CartItemCount} from "./components/Items/CartItemCount/CartItemCount"
+import {ItemList} from "./components/Items/ItemList/ItemList"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Navbar/>
         <ItemListContainer greeting="casa"/>
         <CartItemCount/>
+        <ItemList></ItemList>
         {bizzLogo()}
         {footer()}
         </div>
