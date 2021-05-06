@@ -11,24 +11,24 @@
     .logo img {
       max-width: 15rem; } }
 
-#body {
+body {
   display: grid;
   grid-template-areas: "logo header header header" "nav nav nav nav" "section section section section";
   grid-gap: 5px;
   grid-template-rows: 0.5fr 1fr 100%;
   grid-template-columns: 0.5fr 1fr 1fr 1fr; }
   @media screen and (min-width: 480px) {
-    #body {
+    body {
       grid-template-areas: "header header header header" "logo nav nav nav" "section section section section"; } }
-  #body header {
+  body header {
     grid-area: header; }
-  #body .logo {
+  body .logo {
     grid-area: logo;
     justify-items: center; }
-  #body nav {
+  body nav {
     grid-area: nav;
     align-self: center; }
-  #body section {
+  body section {
     grid-area: section; }
 
 header {
@@ -97,32 +97,32 @@ nav {
     outline: none;
     box-shadow: 0 0 2px #4faee1; }
 
-#body {
+body {
   width: 100%;
   height: 100%;
   margin: 0px; }
-  #body ul {
+  body ul {
     margin-block: 0px;
     padding-inline-start: 0px; }
-    #body ul li {
+    body ul li {
       list-style: none; }
-    #body ul a:hover {
+    body ul a:hover {
       color: #4faee1; }
-  #body a:link {
+  body a:link {
     text-decoration: none;
     color: unset; }
-  #body a:visited {
+  body a:visited {
     text-decoration: none;
     color: unset; }
-  #body section {
+  body section {
     height: 100%; }
-  #body nav ul {
+  body nav ul {
     display: inline; }
-    #body nav ul li {
+    body nav ul li {
       display: inline; }
-  #body nav form {
+  body nav form {
     display: inline; }
-  #body footer {
+  body footer {
     width: 100%;
     margin-block: 0px;
     padding-inline-start: 0px;

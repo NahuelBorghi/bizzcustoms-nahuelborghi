@@ -1,19 +1,20 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 function navbar() {
   return (
     <nav>
       <ul>
         <li>
-          <a href="./">Productos</a>
+          <NavLink exact to="/articles" activeClassName="" className="">Productos</NavLink>
         </li>
         <li>
-          <a href="./">Compatibilidad</a>
+          <NavLink exact to="/" activeClassName="" className="">Compatibilidad</NavLink>
         </li>
         <li>
-          <a href="./">Calcular Watts</a>
+          <NavLink exact to="/" activeClassName="" className="">Calcular Watts</NavLink>
         </li>
         <li>
-          <a href="./">Contacto</a>
+          <NavLink exact to="/" activeClassName="" className="">Contacto</NavLink>
         </li>
       </ul>
       <form id="search" action="" method="">
