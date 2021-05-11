@@ -25,6 +25,9 @@ function App() {
         <Route exact path="/articles/:id">
           <ItemDetailContainer></ItemDetailContainer>
         </Route>
+        <Route exact path="/cart">
+          
+        </Route>
       </Switch>
       {footer()}
     </BrowserRouter>
