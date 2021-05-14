@@ -6,6 +6,7 @@ export const CartItemCount = ({onAdd,suma,resta,cantidad}) => {
       <p>carrito</p>
       <input
         name="agregar"
+        id="agregar"
         type="number"
         value={cantidad}
       ></input>

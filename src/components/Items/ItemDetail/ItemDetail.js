@@ -1,28 +1,35 @@
 import { CartItemCount } from "./CartItemCount/CartItemCount";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Shipping } from "./Shipping/Shipping";
 import { CuotesCalculator } from "./CuotesCalculator/CuotesCalculator";
 import { Link } from "react-router-dom";
 import "./ItemDetail.scss";
+import { CartContext } from "../../Context/cartContext";
 
 export const ItemDetail = ({article:{id,name,img,type,subType,price,color}}) => {
-  const [toAdd,setToAdd] = useState(0);
-  const [cantidad, setCantidad] = useState(0);
+  const cart = useContext(CartContext)
+  const [Add,setAdd] = useState(0)
+  const [quantity, setQuantity] = useState(0);
   const [style,setStyle] = useState("none")
   const stock = 10;
   const suma = () => {
-    if (cantidad < stock) {
-      setCantidad(cantidad + 1);
+    if (quantity < stock) {
+      setQuantity(quantity + 1);
     }
   };
   const resta = () => {
-    if (cantidad > 1) {
-      setCantidad(cantidad - 1);
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
     }
+      console.log(quantity)
   };
-  const add = () => {
-    setToAdd(parseInt(cantidad))
+  const toAdd = () => {
+    setAdd(quantity)
     setStyle("block")
+  }
+  const add = () =>{
+    cart.addItem({id,name,img,type,subType,price,color},Add)
+    setQuantity(0)
   }
   return (
     <div>
@@ -32,8 +39,8 @@ export const ItemDetail = ({article:{id,name,img,type,subType,price,color}}) => 
       </div>
       <CuotesCalculator></CuotesCalculator>
       <Shipping></Shipping>
-      <CartItemCount onAdd={add} suma={suma} resta={resta} cantidad={cantidad}></CartItemCount>
-      <button style={{display: style}}><Link exact to="/Cart">Terminar compra</Link></button>
+      <CartItemCount onAdd={toAdd} suma={suma} resta={resta} cantidad={quantity}></CartItemCount>
+      <button onClick={add} style={{display: style}}><Link exact to="/Cart">Terminar compra</Link></button>
     </div>
   );
 };
