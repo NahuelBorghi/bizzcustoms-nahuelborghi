@@ -15,8 +15,9 @@ export const CartProvider = ({ children }) => {
     }
     const removeItem = (itemId) =>{
         let toDelete = Cart.find((carrito) => carrito.item.id === itemId)
-        console.log(Cart.filter((carrito) => carrito !== toDelete))
-        setCart(Cart.map((carrito) => carrito !== toDelete))
+        let price = toDelete.item.price*toDelete.quantity
+        setTotal(Total-price)
+        setCart(Cart.filter((carrito) => carrito !== toDelete))
         setQuantity(cartQuantity-toDelete.quantity)
     }
     const clear = () =>{
