@@ -1,10 +1,10 @@
-import { CartItemCount } from "./CartItemCount/CartItemCount";
+import { CartItemCount } from "../CartItemCount/CartItemCount";
 import { useContext, useState } from "react";
-import { Shipping } from "./Shipping/Shipping";
-import { CuotesCalculator } from "./CuotesCalculator/CuotesCalculator";
+import { Shipping } from "../Shipping";
+import { CuotesCalculator } from "../CuotesCalculator";
 import { Link } from "react-router-dom";
 import "./ItemDetail.scss";
-import { CartContext } from "../../Context/cartContext";
+import { CartContext } from "../cartContext";
 
 export const ItemDetail = ({article:{id,name,img,type,subType,price,color}}) => {
   const cart = useContext(CartContext)

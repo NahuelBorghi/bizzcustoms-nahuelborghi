@@ -5,29 +5,36 @@ export const CartContext = createContext()
 export const CartProvider = ({ children }) => {
     const [Cart,setCart] = useState([])
     const [cartQuantity,setQuantity] = useState(0)
+    const [Total,setTotal] = useState(0)
 
     const addItem = (item,quantity) =>{
         setCart([...Cart,{item,quantity}])
-        setQuantity(Cart.length)
-        console.log(Cart)
+        setQuantity(cartQuantity+quantity)
+        let price = item.price*quantity
+        setTotal(Total+price)
     }
     const removeItem = (itemId) =>{
-        setCart(Cart.map((carrito) => carrito.item.id !== itemId))
-        setQuantity(Cart.length)
+        let toDelete = Cart.find((carrito) => carrito.item.id === itemId)
+        console.log(Cart.filter((carrito) => carrito !== toDelete))
+        setCart(Cart.map((carrito) => carrito !== toDelete))
+        setQuantity(cartQuantity-toDelete.quantity)
     }
     const clear = () =>{
         setCart([])
-        setQuantity(Cart.length)
+        setTotal(0)
+        setQuantity(0)
         console.log(Cart)
     }
     const getItem = (itemId) =>{
         return Cart.find(obj => obj.item.id === itemId)
     }
     const isInCart = (itemId) =>{
-        return itemId === undefined ? undefined : getItem(itemId) !== undefined
+        if (getItem(itemId) !== undefined){
+            return false
+        }
     }
 
-    return <CartContext.Provider value={{Cart,addItem,removeItem,clear,isInCart,cartQuantity}}>
+    return <CartContext.Provider value={{Total,Cart,addItem,removeItem,clear,isInCart,cartQuantity}}>
             {children}
         </CartContext.Provider>
 }

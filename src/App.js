@@ -4,10 +4,11 @@ import React from "react";
 import { BrowserRouter, Switch, Route} from "react-router-dom";
 import Navbar from "./components/Navbar/navbar";
 import Header from "./components/Header/header";
-import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
+import { ItemListContainer } from "./components/ItemListContainer";
 import { Articles } from "./Pages/Articles";
-import { ItemDetailContainer } from "./components/Items/ItemDetailContainer/ItemDetailContainer";
-import { CartProvider } from "./components/Context/cartContext";
+import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
+import { CartProvider } from "./components/cartContext";
+import { CartContainer } from "./components/Cart"
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
             <ItemDetailContainer></ItemDetailContainer>
           </Route>
           <Route exact path="/cart">
-            
+            <CartContainer>
+            </CartContainer>
           </Route>
         </Switch>
         {footer()}

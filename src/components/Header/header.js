@@ -1,5 +1,6 @@
 import React from "react";
-import { CartWidget } from "../Header/CartWidget/CartWidget";
+import { Link } from "react-router-dom";
+import { CartWidget } from "../CartWidget/CartWidget";
 function Header() {
   return (
     <header>
@@ -8,9 +9,9 @@ function Header() {
           Tema Oscuro
         </button>
       </div>
-      <div className="carrito">
+      <Link exact to="/Cart" className="carrito">
         <CartWidget />
-      </div>
+      </Link>
     </header>
   );
 }
