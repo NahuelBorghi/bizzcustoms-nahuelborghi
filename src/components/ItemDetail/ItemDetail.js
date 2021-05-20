@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 import "./ItemDetail.scss";
 import { CartContext } from "../cartContext";
 
-export const ItemDetail = ({article:{id,name,img,type,subType,price,color}}) => {
+export const ItemDetail = ({article:{colors,id,imagesId,name,price,stock,subtype,type}}) => {
   const cart = useContext(CartContext)
   const [Add,setAdd] = useState(0)
   const [quantity, setQuantity] = useState(0);
   const [style,setStyle] = useState("none")
-  const stock = 10;
+  console.log(name)
   const suma = () => {
     if (quantity < stock) {
       setQuantity(quantity + 1);
@@ -28,7 +28,7 @@ export const ItemDetail = ({article:{id,name,img,type,subType,price,color}}) => 
     setStyle("block")
   }
   const add = () =>{
-    cart.addItem({id,name,img,type,subType,price,color},Add)
+    cart.addItem({colors,id,imagesId,name,price,stock,subtype,type},Add)
     setQuantity(0)
   }
   return (

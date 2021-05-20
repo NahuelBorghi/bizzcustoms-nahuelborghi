@@ -1,11 +1,11 @@
 import "./Item.scss";
 import { Link } from "react-router-dom";
-export const Item = ({article:{id,name,img,type,subType,price,color}}) => {
-  const image = require(`../../assets/images/productos/${img}`).default
+export const Item = ({article:{colors,id,imagesId,name,price,stock,subtype,type}}) => {
+  const image = require(`../../assets/images/productos/${imagesId[0]}`).default
   return (
       <Link to={`/articles/:${id}`}>
       <button className="article" value={id}>
-        <img src={image} alt={img}/>
+        <img src={image} alt={imagesId[0]}/>
         <p className="producto">{name}</p>
         <p>$ {price}</p>
       </button>
