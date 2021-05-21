@@ -20,9 +20,12 @@ export const CartProvider = ({ children }) => {
             oldPrice = item.price*article.quantity
             quantity+=article.quantity
             alert(quantity)
-            let newCart = Cart.filter((carrito)=> carrito.item === item)
-            console.log(newCart)
-            setCart([...newCart,{item,quantity}])
+            let newCart = Cart.filter((carrito)=> carrito.item.id !== item.id)
+            console.log(Cart[0].item)
+            console.log(item)
+            console.log(Cart[0].item === item)
+            newCart.push({item,quantity})
+            setCart(newCart)
             price = item.price*quantity
             setTotal(Total-oldPrice+price)
             console.log(Cart)
