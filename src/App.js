@@ -8,7 +8,8 @@ import { ItemListContainer } from "./components/ItemListContainer";
 import { Articles } from "./Pages/Articles";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from "./components/cartContext";
-import { CartContainer } from "./components/Cart"
+import { CartContainer } from "./components/Cart";
+import { userInfo } from "./components/userInfo"
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           <Route exact path="/cart">
             <CartContainer>
             </CartContainer>
+          </Route>
+          <Route exact path="/userInfo">
+            <userInfo></userInfo>
           </Route>
         </Switch>
         {footer()}

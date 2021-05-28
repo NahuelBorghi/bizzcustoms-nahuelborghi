@@ -15,7 +15,8 @@ export const CartContainer = () =>{
                 <button onClick={()=> cart.removeItem(detail.item.id)}>eliminar</button>
                 </div>
                 ))}
-                <h1>{cart.Total}</h1></> : 
+                <h1>{cart.Total}</h1>
+                <Link exact to="/userInfo"><button>Finalizar compra</button></Link></> : 
                 <>
                     <h1>Aun no ha agregado items al carrito</h1>
                     <Link exact to="/articles"><button>Agregar articulos</button></Link>

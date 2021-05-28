@@ -1,4 +1,7 @@
 import { createContext, useState } from "react"
+import { getFireStore } from "../firebase"
+import firebase from "firebase/app"
+import "firebase/firestore"
 
 export const CartContext = createContext()
 
@@ -6,6 +9,8 @@ export const CartProvider = ({ children }) => {
     const [Cart,setCart] = useState([])
     const [cartQuantity,setQuantity] = useState(0)
     const [Total,setTotal] = useState(0)
+    const [userInfo,SetUserInfo] = useState('')
+    const [orderId,setOrderId] = useState('')
 
     const addItem = (item,quantity) =>{
         let article = isInCart(item.id)
@@ -27,7 +32,7 @@ export const CartProvider = ({ children }) => {
             newCart.push({item,quantity})
             setCart(newCart)
             price = item.price*quantity
-            setTotal(Total-oldPrice+price)
+            setTotal(Total-oldPrice+price.toFixed(2))
             console.log(Cart)
         }else{
             alert("no hay mas stock")
@@ -57,8 +62,45 @@ export const CartProvider = ({ children }) => {
         }else{
         return false}
     }
+    const orderGenerator = async () => {
+        const db = getFireStore()
+        const orders = db.collection("orders")
+        const newOrder = {
+            buyer: userInfo,
+            date: firebase.firestore.Timestamp.fromDate(new Date()),
+            items: Cart,
+            total: Total
+        }
+        const itemlist = db.collection("articles")
+            .where(firebase.firestore.FieldPath.documentId(),'in', Cart.map(i=> i.item.id))
+        //set loading en true
+        const query = await itemlist.get()
+        const batch = db.batch()
+        
+        const outOfStock = []
+        query.docs.forEach((docSnapshot,i) => {
+            if (docSnapshot.data().stock >= Cart[i].quantity){
+                batch.update(docSnapshot.ref, {stock: docSnapshot.data().stock - Cart[i].quantity})
+            }else{
+                outOfStock.push({... docSnapshot.data(), id: docSnapshot.id})
+            }
+        })
+        if(outOfStock.length === 0 ){
+            await batch.commit();
+            orders.add(newOrder).then(({id}) =>{
+                setOrderId(id);
+            }).catch(err =>{
+                console.log(err)
+            }).finally(() =>{
+                //set loading en false
+            })
+            clear()
+        }
+    }
 
-    return <CartContext.Provider value={{Total,Cart,addItem,removeItem,clear,isInCart,cartQuantity}}>
+
+
+    return <CartContext.Provider value={{Total,Cart,userInfo,SetUserInfo,orderGenerator,addItem,removeItem,clear,isInCart,cartQuantity}}>
             {children}
         </CartContext.Provider>
 }
