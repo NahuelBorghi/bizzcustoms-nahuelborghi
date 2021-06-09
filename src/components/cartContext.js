@@ -9,8 +9,8 @@ export const CartProvider = ({ children }) => {
     const [Cart,setCart] = useState([])
     const [cartQuantity,setQuantity] = useState(0)
     const [Total,setTotal] = useState(0)
-    const [userInfo,SetUserInfo] = useState('')
-    const [orderId,setOrderId] = useState('')
+    const [userInfo,SetUserInfo] = useState(undefined)
+    const [orderId,setOrderId] = useState(undefined)
 
     const addItem = (item,quantity) =>{
         let article = isInCart(item.id)
@@ -32,7 +32,7 @@ export const CartProvider = ({ children }) => {
             newCart.push({item,quantity})
             setCart(newCart)
             price = item.price*quantity
-            setTotal(Total-oldPrice+price.toFixed(2))
+            setTotal(parseInt(Total-oldPrice+price.toFixed(2)))
             console.log(Cart)
         }else{
             alert("no hay mas stock")
@@ -87,20 +87,20 @@ export const CartProvider = ({ children }) => {
         })
         if(outOfStock.length === 0 ){
             await batch.commit();
-            orders.add(newOrder).then(({id}) =>{
+            orders.add(newOrder)
+            .then(({id}) =>{
+                console.log(id);
                 setOrderId(id);
             }).catch(err =>{
                 console.log(err)
             }).finally(() =>{
                 //set loading en false
             })
-            clear()
         }
     }
 
 
-
-    return <CartContext.Provider value={{Total,Cart,userInfo,SetUserInfo,orderGenerator,addItem,removeItem,clear,isInCart,cartQuantity}}>
+    return <CartContext.Provider value={{Total,Cart,userInfo,orderId,SetUserInfo,orderGenerator,addItem,removeItem,clear,isInCart,cartQuantity}}>
             {children}
         </CartContext.Provider>
 }

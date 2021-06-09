@@ -5,7 +5,7 @@ function navbar() {
     <nav>
       <ul>
         <li>
-          <NavLink exact to="/articles" activeClassName="" className="">Productos</NavLink>
+          <NavLink exact to="/category/all/" activeClassName="" className="">Productos</NavLink>
         </li>
         <li>
           <NavLink exact to="/" activeClassName="" className="">Compatibilidad</NavLink>

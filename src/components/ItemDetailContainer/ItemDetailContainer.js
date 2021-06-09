@@ -6,14 +6,15 @@ import {getFireStore} from '../../firebase'
 
 export const ItemDetailContainer = () => {
   const itemId=useParams().id
+  console.log(useParams())
   const [Article,setArticle] = useState([])
   useEffect(()=>{
     const db = getFireStore()
     const items = db.collection('articles')
     items.get().then(
-      (querySnapchot) =>{
-        let articulos = querySnapchot.docs.map((doc) => doc.data())
-        setArticle(articulos.find((item) => ":"+item.id === itemId))
+      (querySnapshot) =>{
+        let articulos = querySnapshot.docs.map((doc) => doc.data())
+        setArticle(articulos.find((item) => item.id === itemId))
       }
     )
   },[])

@@ -6,10 +6,11 @@ import Navbar from "./components/Navbar/navbar";
 import Header from "./components/Header/header";
 import { ItemListContainer } from "./components/ItemListContainer";
 import { Articles } from "./Pages/Articles";
+import { UserInfo } from "./components/userInfo";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from "./components/cartContext";
 import { CartContainer } from "./components/Cart";
-import { userInfo } from "./components/userInfo"
+import { Finish } from "./components/Finish";
 
 function App() {
   return (
@@ -19,22 +20,31 @@ function App() {
         {bizzLogo()}
         <Navbar />
         <Switch>
+
           <Route exact path="/">
-            <ItemListContainer></ItemListContainer>
+            <ItemListContainer/>
           </Route>
-          <Route exact path="/Articles">
-            <Articles></Articles>
+
+          <Route path="/category/:type?/:color?">
+            <Articles/>
           </Route>
+
           <Route exact path="/articles/:id">
-            <ItemDetailContainer></ItemDetailContainer>
+            <ItemDetailContainer/>
           </Route>
+
           <Route exact path="/cart">
-            <CartContainer>
-            </CartContainer>
+            <CartContainer/>
           </Route>
+
+          <Route exact path="/order/:orderId">
+            <Finish/>
+          </Route>
+
           <Route exact path="/userInfo">
-            <userInfo></userInfo>
+            <UserInfo/>
           </Route>
+
         </Switch>
         {footer()}
       </CartProvider>
