@@ -1,0 +1,47 @@
+.cart{
+    display: grid;
+    grid-template-rows: 100px auto;
+    grid-template-areas: "title buttons ." "content content total";  
+}
+.title{
+    grid-area: title;
+}
+.content{
+    margin: 5%;
+    justify-self: center;;
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .cartItem{
+        border: 2px solid lightgrey;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        p{
+            display: inline;
+        }
+        img{
+            max-height: 250px;
+            filter: drop-shadow(0 0px 10px grey);
+        }
+    }
+    .total{
+        grid-area: total;
+    }
+}
+.buttons{
+    grid-area: buttons;
+    button{
+        background-color: inherit;
+        border: 1.8px solid #4faee1;
+        padding: 1%;
+        font-weight: bolder;
+        border-radius: 10px;
+        transition: 1s;
+    }
+    button:hover{
+        border-color: gray;
+        background-color: lightgray;
+    }
+}

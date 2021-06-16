@@ -1,6 +1,7 @@
-import { useContext } from "react";
-import { CartContext } from "./cartContext";
+import { useContext, useEffect } from "react";
+import { CartContext } from "../cartContext";
 import { Link } from "react-router-dom"
+import "./UserInfo.scss"
 
 export const UserInfo = () => {
   const cart = useContext(CartContext);
@@ -56,35 +57,36 @@ export const UserInfo = () => {
     ? (document.userInfo.phone.removeAttribute("style"),
       document.userInfo.phone.value)
     : document.userInfo.phone.setAttribute("style", "border:2px solid red");
-    
-    if(cp && prov && city && street && hNum && email && name && phone){
-        const user = {
-            address:{
-                apartment: dpto,
-                city: city,
-                floor: floor,
-                houseNumber: hNum,
-                postalCode: cp,
-                province: prov,
-                streetName: street
-            },
-            email: email,
-            fullName: name,
-            phone: phone
-        }
-        cart.SetUserInfo(user)
-        document.getElementById("next").removeAttribute("style")
-    }else{
-        document.getElementById("next").removeAttribute("style")
-        document.getElementById("next").setAttribute("style","display:none")
+    const user = {
+        address:{
+            apartment: dpto,
+            city: city,
+            floor: floor,
+            houseNumber: hNum,
+            postalCode: cp,
+            province: prov,
+            streetName: street
+        },
+        email: email,
+        fullName: name,
+        phone: phone
     }
-    
+    if(cp && prov && city && street && hNum && email && name && phone){
+        cart.SetUserInfo(user)}
   };
-
+  useEffect(()=>{
+    if(cart.userInfo){
+      document.getElementById("next").removeAttribute("style")
+    }else{
+      document.getElementById("next").removeAttribute("style")
+      document.getElementById("next").setAttribute("style","display:none")
+    }
+  },[cart.userInfo])
   return (
-    <>
-      <form name="userInfo">
-            <h3>Direccion</h3>
+    <section id="userInfo">
+      <form name="userInfo" id="formInfo">
+            <div>
+              <h3>Direccion</h3>
                 <input type="number" name="cp" placeholder="codigo postal"></input>
                 <input type="text" name="prov" placeholder="provincia"></input>
                 <input type="text" name="city" placeholder="ciudad"></input>
@@ -92,13 +94,18 @@ export const UserInfo = () => {
                 <input type="number" name="address" placeholder="altura"></input>
                 <input type="number" name="floor" placeholder="piso"></input>
                 <input type="text" name="dpto" placeholder="departamento"></input>
-            <p>Informacion de contacto</p>
-            <input type="email" name="email" placeholder="mail"></input>
-            <input type="text" name="name" placeholder="nombre completo"></input>
-            <input type="tel" name="phone" placeholder="telefono"></input>
-        <button onClick={(e) => {readInfo(e);}}>guardar</button>
-        <Link exact to="/cart"><button id="next" style={{display:"none"}} onClick={() => {cart.orderGenerator();}}>Continuar</button></Link>
+            </div>
+            <div>
+              <h3>Informacion de contacto</h3>
+                <input type="email" name="email" placeholder="mail"></input>
+                <input type="text" name="name" placeholder="nombre completo"></input>
+                <input type="tel" name="phone" placeholder="telefono"></input>
+            </div>
+            <div>
+              <button onClick={(e) => {readInfo(e);}}>guardar</button>
+              <Link exact to="/cart"><button id="next" style={{display:"none"}} onClick={() => {cart.orderGenerator();}}>Continuar</button></Link>
+            </div>
       </form>
-    </>
+    </section>
   );
 };

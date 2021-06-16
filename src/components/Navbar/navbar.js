@@ -5,16 +5,16 @@ function navbar() {
     <nav>
       <ul>
         <li>
-          <NavLink exact to="/category/all/" activeClassName="" className="">Productos</NavLink>
+          <NavLink exact to="/category/all/" activeClassName="active" className="">Productos</NavLink>
         </li>
         <li>
-          <NavLink exact to="/" activeClassName="" className="">Compatibilidad</NavLink>
+          <NavLink exact to="/compat" activeClassName="active" className="">Compatibilidad</NavLink>
         </li>
         <li>
-          <NavLink exact to="/" activeClassName="" className="">Calcular Watts</NavLink>
+          <NavLink exact to="/watts" activeClassName="active" className="">Calcular Watts</NavLink>
         </li>
         <li>
-          <NavLink exact to="/" activeClassName="" className="">Contacto</NavLink>
+          <NavLink exact to="/contact" activeClassName="active" className="">Contacto</NavLink>
         </li>
       </ul>
       <form id="search" action="" method="">

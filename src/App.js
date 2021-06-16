@@ -6,11 +6,12 @@ import Navbar from "./components/Navbar/navbar";
 import Header from "./components/Header/header";
 import { ItemListContainer } from "./components/ItemListContainer";
 import { Articles } from "./Pages/Articles";
-import { UserInfo } from "./components/userInfo";
+import { UserInfo } from "./components/UserInfo/userInfo";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from "./components/cartContext";
-import { CartContainer } from "./components/Cart";
+import { CartContainer } from "./components/Cart/Cart";
 import { Finish } from "./components/Finish";
+import { Desarrollo } from "./components/Desarrolo"
 
 function App() {
   return (
@@ -43,6 +44,16 @@ function App() {
 
           <Route exact path="/userInfo">
             <UserInfo/>
+          </Route>
+
+          <Route exact path="/compat">
+            <Desarrollo/>
+          </Route>
+          <Route exact path="/watts">
+            <Desarrollo/>
+          </Route>
+          <Route exact path="/contact">
+            <Desarrollo/>
           </Route>
 
         </Switch>

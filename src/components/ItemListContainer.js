@@ -1,3 +1,6 @@
-export const ItemListContainer = ({ greeting }) => {
-  return <p>{greeting}</p>;
+import { Link } from "react-router-dom";
+export const ItemListContainer = () => {
+  return <section>
+    <button><Link to="/category/all/">Comenzar compras</Link></button>
+  </section>;
 };

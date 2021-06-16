@@ -73,9 +73,13 @@ nav {
     margin: 5px;
     padding: 5px;
     border-radius: 5px; }
+    nav ul li a{
+      padding: 0.1% 0.5%;
+      border-radius: 10px;
+    }
     nav ul li a:hover {
       transition: 0.75s;
-      color: black; }
+      filter: brightness(80%); }
   nav ul li:last-child {
     margin-right: 10%; }
   nav ul .active {

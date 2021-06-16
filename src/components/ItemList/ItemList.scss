@@ -32,14 +32,26 @@
         border: 2px solid #4faee1;
         border-radius: 10px;
         padding: 3% 0.5%;
+        filter: drop-shadow(0px 0px 5px #4faee1);
         img{
             width: 99%;
             border-radius: 10px;
-            filter: brightness(40%);
-            transition: 2s;
+            filter: brightness(50%);
+            transition: 1.5s;
         }
         img:hover{
-            filter: brightness(100%);
+            filter: brightness(90%);
+            transition: 0.5s;
+        }
+    }
+    button:disabled{
+        background-color: grey;
+        border-color: grey;
+        filter: drop-shadow(0px 0px 0px #4faee1);
+        color: lightcyan;
+        img{filter: brightness(30%);}
+        img:hover{
+            filter: brightness(30%);
         }
     }
 }

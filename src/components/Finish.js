@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getFireStore } from "../firebase";
+import { CartContext } from "./cartContext";
 
 export const Finish = () => {
   const [order, setOrder] = useState([]);
   const {orderId} = useParams()
+  const cart = useContext(CartContext);
   console.log(order)
   useEffect(async () => {
     const db = getFireStore();
@@ -15,6 +17,7 @@ export const Finish = () => {
       .then((document) => setOrder(document.data()));
     console.log(order);
     console.log(orderId);
+    cart.clear()
   }, []);
 
   return (
@@ -24,20 +27,11 @@ export const Finish = () => {
           {order.items.map((detail) => (
             <div className="orderItem">
               <p>{detail.item.name}</p>
-              <img
-                src={
-                  require(`../assets/images/productos/${detail.item.imagesId}`)
-                    .default
-                }
-                alt={detail.item.imagesId}
-              />
-              <p>
-                ${detail.item.price} x {detail.quantity} =
-                {detail.item.price * detail.quantity}
-              </p>
+              <img src={require(`../assets/images/productos/${detail.item.imagesId}`).default} alt={detail.item.imagesId}/>
+              <p> ${detail.item.price} x {detail.quantity} = {detail.item.price * detail.quantity} </p>
             </div>
           ))}
-          <h1>{order.total}</h1>
+          <h1> {order.total} </h1>
         </>
       ) : (
         <> </>

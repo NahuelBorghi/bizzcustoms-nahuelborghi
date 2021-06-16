@@ -1,0 +1,25 @@
+#userInfo{
+    #formInfo{
+        display: grid;
+        grid-template-columns: auto auto;
+        div{
+            margin: 1% 5%;
+            input{
+                padding: 0.5%;
+                margin: 0.8%;
+                display: block;
+            }
+            button{
+                padding: 15px;
+                margin: 5%;
+            }
+            a{
+                display: inline;
+            }
+        }
+        div:nth-child(3n){
+            grid-column: span 2;
+            justify-self: center;
+        }
+    }
+}

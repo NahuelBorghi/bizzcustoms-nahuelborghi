@@ -65,7 +65,8 @@ export const CartProvider = ({ children }) => {
     const orderGenerator = async () => {
         const db = getFireStore()
         const orders = db.collection("orders")
-        const newOrder = {
+        if(orders!== undefined && Cart!== undefined)
+        {const newOrder = {
             buyer: userInfo,
             date: firebase.firestore.Timestamp.fromDate(new Date()),
             items: Cart,
@@ -76,7 +77,6 @@ export const CartProvider = ({ children }) => {
         //set loading en true
         const query = await itemlist.get()
         const batch = db.batch()
-        
         const outOfStock = []
         query.docs.forEach((docSnapshot,i) => {
             if (docSnapshot.data().stock >= Cart[i].quantity){
@@ -85,18 +85,23 @@ export const CartProvider = ({ children }) => {
                 outOfStock.push({... docSnapshot.data(), id: docSnapshot.id})
             }
         })
-        if(outOfStock.length === 0 ){
-            await batch.commit();
-            orders.add(newOrder)
+        await batch.commit();
+        if(outOfStock.length === 0){
+            orders.add({
+                buyer: userInfo,
+                date: firebase.firestore.Timestamp.fromDate(new Date()),
+                items: Cart,
+                total: Total
+            })
             .then(({id}) =>{
                 console.log(id);
                 setOrderId(id);
             }).catch(err =>{
-                console.log(err)
+                console.log("firebase error: "+err)
             }).finally(() =>{
                 //set loading en false
             })
-        }
+        }}
     }
 
 

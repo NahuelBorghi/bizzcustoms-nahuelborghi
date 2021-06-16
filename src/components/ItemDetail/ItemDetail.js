@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "./ItemDetail.scss";
 import { CartContext } from "../cartContext";
 
-export const ItemDetail = ({article:{colors,id,imagesId,name,price,stock,subtype,type}}) => {
+export const ItemDetail = ({article:{colors,id,imagesId,name,price,stock,type}}) => {
   const cart = useContext(CartContext)
   const [Add,setAdd] = useState(0)
   const [quantity, setQuantity] = useState(0);
@@ -28,7 +28,7 @@ export const ItemDetail = ({article:{colors,id,imagesId,name,price,stock,subtype
     setStyle("block")
   }
   const add = () =>{
-    cart.addItem({colors,id,imagesId,name,price,stock,subtype,type},Add)
+    cart.addItem({colors,id,imagesId,name,price,stock,type},Add)
     setQuantity(0)
   }
   return (

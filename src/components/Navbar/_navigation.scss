@@ -8,8 +8,11 @@ nav{
     ul{
         li{
             margin: 5px;
-            padding: 5px;
+            padding: 3%;
             border-radius: 5px;
+            a{
+                padding: 2%;
+            }
             a:hover{
                 transition: 0.75s;
                 color: black;
