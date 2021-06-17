@@ -1,0 +1,21 @@
+.orderItem{
+    border: 2px solid lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    p{
+        display: inline;
+    }
+    img{
+        max-height: 150px;
+    }
+}
+#orderInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    div{
+        border: 2px solid lightgrey;
+        padding: 0 3%;
+    }
+}

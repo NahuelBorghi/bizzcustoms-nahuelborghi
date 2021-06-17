@@ -85,25 +85,25 @@ export const UserInfo = () => {
   return (
     <section id="userInfo">
       <form name="userInfo" id="formInfo">
-            <div>
+            <div id="direction">
               <h3>Direccion</h3>
-                <input type="number" name="cp" placeholder="codigo postal"></input>
-                <input type="text" name="prov" placeholder="provincia"></input>
-                <input type="text" name="city" placeholder="ciudad"></input>
-                <input type="text" name="street" placeholder="calle"></input>
-                <input type="number" name="address" placeholder="altura"></input>
-                <input type="number" name="floor" placeholder="piso"></input>
-                <input type="text" name="dpto" placeholder="departamento"></input>
+                <input autoComplete="new-password" type="number" name="cp" placeholder="codigo postal"></input>
+                <input autoComplete="new-password" type="text" name="prov" placeholder="provincia"></input>
+                <input autoComplete="new-password" type="text" name="city" placeholder="ciudad"></input>
+                <input autoComplete="new-password" type="text" name="street" placeholder="calle"></input>
+                <input autoComplete="new-password" type="number" name="address" placeholder="altura"></input>
+                <input autoComplete="new-password" type="number" name="floor" placeholder="piso"></input>
+                <input autoComplete="new-password" type="text" name="dpto" placeholder="departamento"></input>
             </div>
-            <div>
+            <div id="contact">
               <h3>Informacion de contacto</h3>
-                <input type="email" name="email" placeholder="mail"></input>
-                <input type="text" name="name" placeholder="nombre completo"></input>
+                <input autoComplete="new-password" type="email" name="email" placeholder="mail"></input>
+                <input autoComplete="new-password" type="text" name="name" placeholder="nombre completo"></input>
                 <input type="tel" name="phone" placeholder="telefono"></input>
             </div>
-            <div>
+            <div id="buttons">
               <button onClick={(e) => {readInfo(e);}}>guardar</button>
-              <Link exact to="/cart"><button id="next" style={{display:"none"}} onClick={() => {cart.orderGenerator();}}>Continuar</button></Link>
+              <button id="next" style={{display:"none"}} onClick={() => {cart.orderGenerator();}}><Link exact to="/cart">Continuar</Link></button>
             </div>
       </form>
     </section>

@@ -4,6 +4,7 @@ import "./ItemList.scss";
 import { getFireStore } from "../../firebase";
 import { Filter } from "../filter";
 import { useParams } from "react-router";
+import {Loading} from "./components/Loading/Loading";
 
 export const ItemList = () => {
   const { type, color } = useParams();

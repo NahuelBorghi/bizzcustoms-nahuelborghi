@@ -11,6 +11,7 @@ export const CartProvider = ({ children }) => {
     const [Total,setTotal] = useState(0)
     const [userInfo,SetUserInfo] = useState(undefined)
     const [orderId,setOrderId] = useState(undefined)
+    const [loading,setLoading] = useState(0)
 
     const addItem = (item,quantity) =>{
         let article = isInCart(item.id)
@@ -105,7 +106,7 @@ export const CartProvider = ({ children }) => {
     }
 
 
-    return <CartContext.Provider value={{Total,Cart,userInfo,orderId,SetUserInfo,orderGenerator,addItem,removeItem,clear,isInCart,cartQuantity}}>
+    return <CartContext.Provider value={{loading,Total,Cart,userInfo,orderId,setLoading,SetUserInfo,orderGenerator,addItem,removeItem,clear,isInCart,cartQuantity}}>
             {children}
         </CartContext.Provider>
 }

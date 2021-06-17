@@ -10,8 +10,8 @@ import { UserInfo } from "./components/UserInfo/userInfo";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from "./components/cartContext";
 import { CartContainer } from "./components/Cart/Cart";
-import { Finish } from "./components/Finish";
-import { Desarrollo } from "./components/Desarrolo"
+import { Finish } from "./components/Finish/Finish";
+import { Desarrollo } from "./components/Desarrolo";
 
 function App() {
   return (
