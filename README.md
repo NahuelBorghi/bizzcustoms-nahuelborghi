@@ -1,3 +1,10 @@
+## recorrido de compra
+
+![Alt text](1.gif)
+![Alt text](2.gif)
+![Alt text](3.gif)
+![Alt text](4.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
