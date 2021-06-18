@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
+import {ItemNull} from "../itemNull.js"
 import "./ItemDetailContainer.scss";
 import {getFireStore} from '../../firebase'
 
@@ -19,8 +20,10 @@ export const ItemDetailContainer = () => {
     )
   },[])
   return (
-    <div id="Detail">
-      <ItemDetail article={Article}></ItemDetail>
-    </div>
+    <section id="Detail">
+      {Article!=undefined ?(<ItemDetail article={Article}></ItemDetail>)
+      :
+      (<ItemDetail article={{colors:[0,1], id: 0, imagesId: ["noImage.png"], name: "No results", price: 0,stock: 0,type:0 }}/>)}
+    </section>
   );
 };

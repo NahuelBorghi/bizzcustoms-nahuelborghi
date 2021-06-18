@@ -5,9 +5,7 @@ function Header() {
   return (
     <header>
       <div>
-        <button id="tema" type="button">
-          Tema Oscuro
-        </button>
+        {/*aca va el boton de cambio de tema*/}
       </div>
       <Link exact to="/Cart" className="carrito">
         <CartWidget />

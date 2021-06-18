@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
     const [Total,setTotal] = useState(0)
     const [userInfo,SetUserInfo] = useState(undefined)
     const [orderId,setOrderId] = useState(undefined)
-    const [loading,setLoading] = useState(0)
+    const [loading,setLoading] = useState(false)
 
     const addItem = (item,quantity) =>{
         let article = isInCart(item.id)
