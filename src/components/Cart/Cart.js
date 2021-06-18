@@ -4,7 +4,8 @@ import { CartContext } from "../cartContext";
 import "./Cart.scss"
 export const CartContainer = () => {
   const cart = useContext(CartContext);
-
+  console.log(cart.orderId)
+  console.log(cart.userInfo)
   return (
     <section className="cart">
       {cart.cartQuantity > 0 ? (
