@@ -8,7 +8,7 @@
 }
 .content{
     margin: 5%;
-    justify-self: center;;
+    justify-self: center;
     grid-area: content;
     display: flex;
     flex-direction: column;
@@ -22,6 +22,19 @@
         img{max-height: 250px;filter: drop-shadow(0 0px 10px grey);}
     }
     .total{grid-area: total;}
+}
+@media screen and (max-width: 480px){
+    .cart{
+        grid-template-areas: "title title buttons" "content content content" "total total total";
+    }
+    .content{
+        .cartItem{
+        flex-direction: column;
+        align-self: center;
+        padding: 2%;
+        img{max-height: 120px;}
+        }
+    }
 }
 .buttons{
     grid-area: buttons;

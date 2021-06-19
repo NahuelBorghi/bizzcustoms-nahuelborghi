@@ -19,3 +19,8 @@
         padding: 0 3%;
     }
 }
+@media screen and (max-width: 480px){
+    #orderInfo{
+        flex-direction: column;
+    }
+}

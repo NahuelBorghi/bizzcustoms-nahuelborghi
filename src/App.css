@@ -49,6 +49,11 @@ header {
       height: 100%;
       max-width: 3rem;
       max-height: 3rem; }
+      @media screen and (max-width: 480px){
+        header .carrito{
+          width: 12%;
+        }
+      }
   header div button {
     border-color: #414E89;
     border-style: solid;
@@ -156,14 +161,15 @@ footer {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   z-index: 4; }
-
-#inicio button{
-  padding: 1.5%;
-  background-color: inherit;
-  border: 1px solid #4faee1;
-  border-radius: 10px;
-  font-size: 20px;
-  position: relative;
-  left: 45%;
-  top: 40%;
+#inicio{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+  #inicio button{
+    padding: 1.5%;
+    background-color: inherit;
+    border: 1px solid #4faee1;
+    border-radius: 10px;
+    font-size: 20px;
+  }

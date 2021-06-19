@@ -44,3 +44,18 @@
         }
     }
 }
+@media screen and (max-width: 480px){
+    #Detail{
+        grid-template-areas: "img img" "datos datos" "controls controls" "cart cart";
+        #imgProduct{
+            width: 100%;
+            border-radius: 10%;
+            img{
+                max-width: 100%;
+            }
+        }
+        #cartButton{
+            margin-bottom: 5%;
+        }
+    }
+}
